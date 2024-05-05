@@ -1,91 +1,107 @@
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 20px;
-    }
+<!DOCTYPE html>
+<html lang="pt-br">
 
-    form {
-        display: flex;
-        margin-bottom: 20px;
-        
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
 
-    label {
-        display: block;
-        margin-bottom: 5px;
-    }
+        form {
+            display: flex;
+            margin: 10px;
+        }
 
-    input[type="number"], select{
-        background-color: pink;
-        padding: 8px;
-        margin-bottom: 10px;
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
 
-    }
-    .botao {
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-        margin-right: 10px;
-    }
+        input[type="number"],
+        select {
+            background-color: lightgrey;
+            padding: 8px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
 
-    .botao:hover {
-        background-color: #0056b3;
-    }
+        }
 
-    h1 {
-        margin-top: 20px;
-        font-size: 18px;
-        border: 1px solid #ddd;
-        padding: 10px;
-        background-color: #fff;
-        border-radius: 5px;
-        max-height: 200px;
-        overflow-y: auto;
-        border-collapse: collapse;
-    }
+        .botao {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
 
-    li {
-        border: 1px solid #ddd;
-        padding: 10px;
-        background-color: #fff;
-        border-radius: 5px;
-        max-height: 200px;
-        overflow-y: auto;
-        border-collapse: collapse;
-    }
+        .botao:hover {
+            background-color: #0056b3;
+        }
 
-</style>
+        h1 {
+            margin-top: 20px;
+            font-size: 18px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            max-height: 200px;
+            overflow-y: auto;
+            border-collapse: collapse;
+        }
 
-<form method="POST">
-    <label for="num1">Numero 1: </label>
-    <input type="number" id="num1" name="num1">
+        li {
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            max-height: 200px;
+            overflow-y: auto;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
 
-    <select id="operacao" name="operacao">
-        <option value="+">+</option>
-        <option value="-">-</option>
-        <option value="*">*</option>
-        <option value="/">/</option>
-        <option value="!">!</option>
-        <option value="^">^</option>
-    </select>
+<body>
+    <div class="flex">
+        <form method="POST">
+            <label for="num1">Numero 1: </label>
+            <input type="number" id="num1" name="num1">
 
-    <label for="num2">Numero 2: </label>
-    <input type="number" id="num2" name="num2">
+            <select id="operacao" name="operacao">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="!">!</option>
+                <option value="^">^</option>
+            </select>
 
-    <input type="submit" value="Calcular" name="calcular" class="botao">
+            <label for="num2">Numero 2: </label>
+            <input type="number" id="num2" name="num2">
 
-    <input type="submit" name="salvar_memoria" value="Salvar na Memória" class="botao">
-    <input type="submit" name="recuperar_memoria" value="Recuperar Memória" class="botao">
-</form>
+            <input type="submit" value="Calcular" name="calcular" class="botao">
 
-<form method="post">
-    <input type="hidden" name="apagar_historico" value="">
-    <input type="submit" value="Limpar historico" class="botao">
-</form>
+            <input type="submit" name="salvar_memoria" value="Salvar na Memória" class="botao">
+            <input type="submit" name="recuperar_memoria" value="Recuperar Memória" class="botao">
+        </form>
+
+        <form method="post">
+            <input type="hidden" name="apagar_historico" value="">
+            <input type="submit" value="Limpar historico" class="botao">
+        </form>
+    </div>
+</body>
+
+</html>
 
 <?php
 session_start();

@@ -24,9 +24,9 @@
 <?php
 session_start();
 if (isset($_POST['num1']) && isset($_POST['num2']) && isset($_POST['operacao'])) {
-    $nu1 = $_POST['num1'];
-    $nu2 = $_POST['num2'];
-    $operacao = $_POST['operacao'];
+    $nu1 = $_POST['num1'] ?? 0;
+    $nu2 = $_POST['num2'] ?? 0;
+    $operacao = $_POST['operacao'] ?? null;
 
     $num1 = doubleval($nu1);
     $num2 = doubleval($nu1);
